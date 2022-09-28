@@ -8,6 +8,11 @@ type CreateSandwichProps = {
 
 export default function CreateSandwich(props: CreateSandwichProps) {
 
+    let audio = new Audio("../assets/Cow-Moo.mp3")
+
+    const start = () => {
+        audio.play()
+    }
     // const emptySandwichPlaceholder: Sandwich = {
     //     id: "",
     //     name: "",
@@ -129,7 +134,7 @@ export default function CreateSandwich(props: CreateSandwichProps) {
                            style={{height: "500px", paddingBottom: "20px"}}/>}
             {hidden ?
             <button
-                onClick={() => setHidden(s => !s)}
+                onClick={() => { setHidden(s => !s); start()}}
                 style={{width: "300px"}}
                 type="button" className="btn btn-outline-light"
             >Click me to order</button> :
