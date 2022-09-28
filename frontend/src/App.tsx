@@ -8,6 +8,7 @@ import {Sandwich} from "./model/Sandwich";
 function App() {
   // Creates a state "sandwiches" and gives us a method to change/set it
   const [sandwiches, setSandwiches] = useState([]);
+  let sandwich!: Sandwich;
 
   // Load Todos from backend
   useEffect ( () => {
@@ -32,14 +33,14 @@ function App() {
     axios.delete("/api/sandwich/" + id)
         .then(loadSandwiches) // reload sandwiches from backend
   }
-  
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Bestellungen</h1>
 
         <SandwichOverview sandwiches={sandwiches} deleteSandwich={deleteSandwich} />
-        <CreateSandwich addSandwich={addSandwich} />
+        <CreateSandwich addSandwich={addSandwich} sandwich={sandwich}/>
 
       </header>
     </div>

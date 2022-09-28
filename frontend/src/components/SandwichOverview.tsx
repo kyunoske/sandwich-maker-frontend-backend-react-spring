@@ -9,10 +9,17 @@ type SandwichOverviewProps = {
 
 export default function SandwichOverview(props : SandwichOverviewProps){
 
+    let hasSandwich: boolean = props.sandwiches.length > 0;
+
     return (
+
+        <div>
+        {hasSandwich ?
         <div className="menu-list">
             {props.sandwiches.map((sandwich) =>
                 <SandwichDetails key={sandwich.id} sandwich={sandwich} deleteSandwich={props.deleteSandwich} /> ) }
+        </div>
+                : <h3>Please order your sandwhich!</h3>}
         </div>
     )
 
