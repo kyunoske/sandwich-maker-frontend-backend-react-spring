@@ -45,9 +45,8 @@ export default function CreateSandwich(props: CreateSandwichProps) {
         setSandwich(sandwich);
         if (sandwich) {
             props.addSandwich(sandwich);
+            console.log(sandwich);
         }
-        console.log(sandwich)
-
     }
     /*
     * TODO: Aufgabe 2 -> Erstelle eine handleChange(event: ChangeEvent<HTMLInputElement>) Funktion,
@@ -62,56 +61,83 @@ export default function CreateSandwich(props: CreateSandwichProps) {
      const [hidden, setHidden] = useState(true);
 
     return (
-        <div>
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+        }}>
             {/* TODO: onClick hier entfernen und props.addSandwich in handleSubmit verschieben */}
             {!hidden ?
             <form onSubmit={handleSubmit} style={{
-                    display: "flex",
-                    flexDirection: "column",
                     margin: "auto",
                     width: "300px"
             }}>
                 <input
-                name="id"
-                type="text"
-                placeholder="id"
-                onChange={(event) => setId(event.target.value)}
+                    style={{marginBottom: "10px"}}
+                    className="form-control"
+                    name="id"
+                    type="text"
+                    placeholder="id"
+                    onChange={(event) => setId(event.target.value)}
                 />
                 <input
+                    style={{marginBottom: "10px"}}
+                    className="form-control"
                     name="name"
                     type="text"
                     placeholder="name"
                     onChange={(e) => setName(e.target.value)}
                 />
                 <input
+                    style={{marginBottom: "10px"}}
+                    className="form-control"
                     name="patty"
                     type="text"
                     placeholder="patty"
                     onChange={(e) => setPatty(e.target.value)}
                 />
                 <input
+                    style={{marginBottom: "10px"}}
+                    className="form-control"
                     name="numberOfPatties"
                     type="number"
                     placeholder="number of patties"
                     onChange={(e) => setNumberOfPatties(e.target.valueAsNumber)}
                 />
                 <input
+                    style={{marginBottom: "10px"}}
+                    className="form-control"
                     name="extraWashes"
                     type="text"
                     placeholder="extras"
                     onChange={(e) => setExtraWishes(e.target.value)}
                 />
-                <button onClick={() => props.addSandwich(props.sandwich)}>Bestellung hinzufügen</button>
+                <button
+                    // onClick={() => props.addSandwich(props.sandwich)}
+                    type="submit" className="btn btn-success" style={{width: "300px", marginBottom: "10px"}}
+                >Bestellung hinzufügen</button>
                 <div style={{display: "flex"}}>
                     <input
+                        style={{width: "35px", height: "25px", marginTop: "5px"}}
+                        className="form-check-input"
                         name="grilled"
                         type="checkbox"
                         onChange={(e) => setGrilled(e.target.checked)}
                     />
-                    <p>Do you want your meat grilled? Click checkbox for yes!</p>
+                    <p style={{fontSize: "large"}}>Do you want your meat grilled? Click checkbox for yes!</p>
                 </div>
-            </form> : null}
-            <button onClick={() => setHidden(s => !s)}>Click me to order</button>
+            </form> : <img src={process.env.PUBLIC_URL+"images/cow.png"}
+                           style={{height: "500px", paddingBottom: "20px"}}/>}
+            {hidden ?
+            <button
+                onClick={() => setHidden(s => !s)}
+                style={{width: "300px"}}
+                type="button" className="btn btn-outline-light"
+            >Click me to order</button> :
+                <button
+                    onClick={() => setHidden(s => !s)}
+                    style={{width: "300px"}}
+                    type="button" className="btn btn-outline-light"
+                >Main menu</button>}
         </div>
     )
 

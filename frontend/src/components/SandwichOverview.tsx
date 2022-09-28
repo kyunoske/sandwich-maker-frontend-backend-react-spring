@@ -19,7 +19,7 @@ export default function SandwichOverview(props : SandwichOverviewProps){
             {props.sandwiches.map((sandwich) =>
                 <SandwichDetails key={sandwich.id} sandwich={sandwich} deleteSandwich={props.deleteSandwich} /> ) }
         </div>
-                : <h3>Please order your sandwhich!</h3>}
+                : <h3>Please order your sandwich!</h3>}
         </div>
     )
 
