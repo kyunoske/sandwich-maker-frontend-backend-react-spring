@@ -76,14 +76,14 @@ export default function CreateSandwich(props: CreateSandwichProps) {
                     margin: "auto",
                     width: "300px"
             }}>
-                <input
-                    style={{marginBottom: "10px"}}
-                    className="form-control"
-                    name="id"
-                    type="text"
-                    placeholder="your favorite number"
-                    onChange={(event) => setId(event.target.value)}
-                />
+                {/*<input*/}
+                {/*    style={{marginBottom: "10px"}}*/}
+                {/*    className="form-control"*/}
+                {/*    name="id"*/}
+                {/*    type="text"*/}
+                {/*    placeholder="your favorite number"*/}
+                {/*    onChange={(event) => setId(event.target.value)}*/}
+                {/*/>*/}
                 <input
                     style={{marginBottom: "10px"}}
                     className="form-control"
