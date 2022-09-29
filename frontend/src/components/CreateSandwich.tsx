@@ -81,31 +81,34 @@ export default function CreateSandwich(props: CreateSandwichProps) {
                     className="form-control"
                     name="id"
                     type="text"
-                    placeholder="id"
+                    placeholder="your favorite number"
                     onChange={(event) => setId(event.target.value)}
                 />
                 <input
                     style={{marginBottom: "10px"}}
                     className="form-control"
                     name="name"
+                    required={true}
                     type="text"
-                    placeholder="name"
+                    placeholder="name of sandwich"
                     onChange={(e) => setName(e.target.value)}
                 />
                 <input
                     style={{marginBottom: "10px"}}
                     className="form-control"
                     name="patty"
+                    required={true}
                     type="text"
-                    placeholder="patty"
+                    placeholder="type of meat or veggie"
                     onChange={(e) => setPatty(e.target.value)}
                 />
                 <input
                     style={{marginBottom: "10px"}}
                     className="form-control"
                     name="numberOfPatties"
+                    required={true}
                     type="number"
-                    placeholder="number of patties"
+                    placeholder="how many patties?"
                     onChange={(e) => setNumberOfPatties(e.target.valueAsNumber)}
                 />
                 <input
@@ -117,9 +120,9 @@ export default function CreateSandwich(props: CreateSandwichProps) {
                     onChange={(e) => setExtraWishes(e.target.value)}
                 />
                 <button
-                    // onClick={() => props.addSandwich(props.sandwich)}
                     type="submit" className="btn btn-success" style={{width: "300px", marginBottom: "10px"}}
-                >Bestellung hinzufügen</button>
+                    >Bestellung hinzufügen
+                </button>
                 <div style={{display: "flex"}}>
                     <input
                         style={{width: "35px", height: "25px", marginTop: "5px"}}
