@@ -10,7 +10,9 @@ export default function SandwichDetails(props: SandwichDetailsProps) {
 
     return (
         <div className={"sandwich-card"}>
-            <button onClick={() => props.deleteSandwich(props.sandwich.id)}>X</button>
+            <button onClick={() => props.deleteSandwich(props.sandwich.id)}
+                    type="button" className="btn btn-outline-light"
+            >X</button>
 
             <p className="name">{props.sandwich.name}</p>
             <p className="left-side">Bullete: </p><p>{props.sandwich.patty} </p>

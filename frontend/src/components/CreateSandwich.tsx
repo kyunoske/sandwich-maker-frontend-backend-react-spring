@@ -128,7 +128,7 @@ export default function CreateSandwich(props: CreateSandwichProps) {
                         type="checkbox"
                         onChange={(e) => setGrilled(e.target.checked)}
                     />
-                    <p style={{fontSize: "large"}}>Do you want your meat grilled? Click checkbox for yes!</p>
+                    <p style={{fontSize: "large"}}>Do you want your bread grilled? Click checkbox for yes!</p>
                 </div>
             </form> : <img src={process.env.PUBLIC_URL+"images/cow.png"}
                            style={{height: "500px", paddingBottom: "20px"}}/>}
